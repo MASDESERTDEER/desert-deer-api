@@ -1,0 +1,6 @@
+@desert.deer.Api_HostAddress = http://localhost:5263
+
+GET {{desert.deer.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
