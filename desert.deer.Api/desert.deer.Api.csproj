@@ -15,6 +15,7 @@
 
 <ItemGroup>
     <ProjectReference Include="..\desert.deer.Domain\desert.deer.Domain.csproj" />
+    <ProjectReference Include="..\desert.deer.Data\desert.deer.Data.csproj" />
   </ItemGroup>
 
 
