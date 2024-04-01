@@ -1,11 +1,17 @@
 using Microsoft.AspNetCore.Mvc;
 using desert.deer.Domain.Catalog;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using desert.deer.Data;
 
 namespace desert.deer.Api.Controllers {
     [ApiController]
-    [Route("[controller]")]   
+    [Route("/catalog")]   
      public class CatalogController: ControllerBase {
+        private readonly StoreContext _db;
+        public CatalogController(StoreContext db){
+            _db = db;
+        }
+        /*
         [HttpGet]
         public IActionResult GetItems(){
             var items = new List<Item>() {
@@ -14,6 +20,13 @@ namespace desert.deer.Api.Controllers {
             };
             return Ok(items);
         }
+        */
+
+        [HttpGet]
+        public IActionResult GetItems(){           
+            return Ok(_db.Items);
+        }
+
 
 
         [HttpGet("{id:int}")]
