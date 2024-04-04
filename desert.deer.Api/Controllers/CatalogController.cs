@@ -66,15 +66,26 @@ namespace desert.deer.Api.Controllers {
             return Created($"/catalog/{item.Id}", item);        
         }
 
-
-
-
+        /*
         [HttpPost("{id}/ratings")]
         public IActionResult PostRating(int id, [FromBody] Rating rating){
             var item = new Item("Shirt", "Ohio State Shirt", "Nike", 29.99m);
             item.Id  = id;
             item.AddRating(rating);
             return Ok(item);  
+        }
+        */
+
+
+        [HttpPost("{id}/ratings")]
+        public IActionResult PostRating(int id, [FromBody] Rating rating){
+            var item = _db.Items.Find(id);
+            if(item == null){
+                return NotFound();
+            }
+            item.AddRating(rating);
+            _db.SaveChanges();
+            return Ok(item);          
         }
 
         /* Test the post method using the folowing data in the body of the message: 
