@@ -145,15 +145,25 @@ namespace desert.deer.Api.Controllers {
                     }
 
         */
-
+        /*
          [HttpDelete("{id:int}")]
         public IActionResult Delete(int id){
             //return Ok("Deleted!");
             return NoContent();
         }
+        */
 
 
-
+        [HttpDelete("{id:int}")]
+        public IActionResult DeleteItem(int id){
+           var item = _db.Items.Find(id);
+            if(item == null){
+                return NotFound();
+            }
+            _db.Items.Remove(item);
+            _db.SaveChanges();
+            return Ok();            
+        }
         
 
 
