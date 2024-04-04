@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "desert.deer.Api", "desert.d
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "desert.deer.Domain", "desert.deer.Domain\desert.deer.Domain.csproj", "{057F91F8-16CA-4282-A25A-32A0C413B136}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2F392B40-BE42-4FB7-BFFC-657DFC5FB8B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "desert.deer.Domain.Tests", "tests\desert.deer.Domain.Tests\desert.deer.Domain.Tests.csproj", "{CF6F231D-8DA2-4AED-BB43-85D1BC0E3017}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,12 @@ Global
 		{057F91F8-16CA-4282-A25A-32A0C413B136}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{057F91F8-16CA-4282-A25A-32A0C413B136}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{057F91F8-16CA-4282-A25A-32A0C413B136}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF6F231D-8DA2-4AED-BB43-85D1BC0E3017}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF6F231D-8DA2-4AED-BB43-85D1BC0E3017}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF6F231D-8DA2-4AED-BB43-85D1BC0E3017}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF6F231D-8DA2-4AED-BB43-85D1BC0E3017}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CF6F231D-8DA2-4AED-BB43-85D1BC0E3017} = {2F392B40-BE42-4FB7-BFFC-657DFC5FB8B8}
 	EndGlobalSection
 EndGlobal
