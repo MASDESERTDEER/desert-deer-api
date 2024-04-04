@@ -5,7 +5,7 @@ using desert.deer.Data;
 
 namespace desert.deer.Api.Controllers {
     [ApiController]
-    [Route("/catalog")]   
+    [Route("/catalog")]  
      public class CatalogController: ControllerBase {
         private readonly StoreContext _db;
         public CatalogController(StoreContext db){
