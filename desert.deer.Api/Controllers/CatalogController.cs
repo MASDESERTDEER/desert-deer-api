@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using desert.deer.Domain.Catalog;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using desert.deer.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace desert.deer.Api.Controllers {
     [ApiController]
@@ -98,12 +99,35 @@ namespace desert.deer.Api.Controllers {
         */
 
        
-        
+        /*
         [HttpPut("{id:int}")]
         public IActionResult Put(int id, Item item){
             //return Ok(item);
             return NoContent();
         }
+        */
+
+
+
+
+        [HttpPut("{id:int}")]
+        public IActionResult PutItem(int id, [FromBody] Item item){
+            //_db.Set<Item>().AsNoTracking();
+            if(id != item.Id){
+                return BadRequest();
+            }
+            if(_db.Items.Find(id) == null){
+                return NotFound();
+            }
+            _db.Entry(item).State = EntityState.Modified;
+            _db.SaveChanges();
+            return Ok(item);
+            //return NoContent();            
+        }
+
+
+
+
         /*   Test put using the following data in the body of the message: 
                     {
                         "id": 1,

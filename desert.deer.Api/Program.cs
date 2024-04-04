@@ -8,9 +8,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-builder.Services.AddDbContext<StoreContext>(options => options.UseSqlite("Data Source=../Registrar.sqlite",
-b => b.MigrationsAssembly("desert.deer.Api") )
-);
+builder.Services.AddDbContext<StoreContext>(options =>
+{
+ options.UseSqlite("Data Source=../Registrar.sqlite",
+b => b.MigrationsAssembly("desert.deer.Api")); 
+options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+});
 
 
 
