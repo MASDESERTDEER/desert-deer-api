@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "desert.deer.Api", "desert.d
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "desert.deer.Domain", "desert.deer.Domain\desert.deer.Domain.csproj", "{057F91F8-16CA-4282-A25A-32A0C413B136}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "desert.deer.Data", "desert.deer.Data\desert.deer.Data.csproj", "{671E0ACF-3FAB-4AA9-8132-2D3F95887C33}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{057F91F8-16CA-4282-A25A-32A0C413B136}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{057F91F8-16CA-4282-A25A-32A0C413B136}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{057F91F8-16CA-4282-A25A-32A0C413B136}.Release|Any CPU.Build.0 = Release|Any CPU
+		{671E0ACF-3FAB-4AA9-8132-2D3F95887C33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{671E0ACF-3FAB-4AA9-8132-2D3F95887C33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{671E0ACF-3FAB-4AA9-8132-2D3F95887C33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{671E0ACF-3FAB-4AA9-8132-2D3F95887C33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
