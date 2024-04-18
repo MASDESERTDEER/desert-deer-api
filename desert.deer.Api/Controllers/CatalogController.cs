@@ -60,7 +60,7 @@ namespace desert.deer.Api.Controllers {
         */
 
         
-        [HttpPost]
+        [HttpPost("{id}")]
         public IActionResult Post(Item item){
             _db.Items.Add(item);
             _db.SaveChanges();
@@ -110,9 +110,9 @@ namespace desert.deer.Api.Controllers {
 
 
 
-        [HttpPut("{id:int}")]
+        [HttpPut("{id}")]
         public IActionResult PutItem(int id, [FromBody] Item item){
-            //_db.Set<Item>().AsNoTracking();
+            // _db.Set<Item>().AsNoTracking();
             if(id != item.Id){
                 return BadRequest();
             }
@@ -124,16 +124,12 @@ namespace desert.deer.Api.Controllers {
             return Ok(item);
             //return NoContent();            
         }
-
-
-
-
-        /*   Test put using the following data in the body of the message: 
-                    {
+        /*   Test put using the following data in the body of the message: and include the id in the url
+            {
                         "id": 1,
-                        "name": "Shirt",
+                        "name": "New Shirto",
                         "description": "Ohio State Shirt",
-                        "brand": "Nike",
+                        "brand": "Nikeo",
                         "price": 29.99,
                         "ratings": [
                             {
@@ -153,7 +149,6 @@ namespace desert.deer.Api.Controllers {
         }
         */
 
-
         [HttpDelete("{id:int}")]
         public IActionResult DeleteItem(int id){
            var item = _db.Items.Find(id);
@@ -163,21 +158,11 @@ namespace desert.deer.Api.Controllers {
             _db.Items.Remove(item);
             _db.SaveChanges();
             return Ok();            
-        }
+        }  
+
+
+
         
-
-
-
-
-
-
-
-
-
-
-
+          
     }
-
-
-
 }
