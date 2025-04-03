@@ -1,6 +1,7 @@
 using desert.deer.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Sqlite;
+using desert.deer.Api.Security;
 
 var builder = WebApplication.CreateBuilder(args);
 
