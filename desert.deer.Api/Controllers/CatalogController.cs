@@ -153,8 +153,9 @@ namespace desert.deer.Api.Controllers {
         }
         */
 
+        
+        [Authorize("DeleteCatalog")]
         [HttpDelete("{id:int}")]
-        [Authorize("delete:catalog")]
         public IActionResult DeleteItem(int id){
            var item = _db.Items.Find(id);
             if(item == null){
