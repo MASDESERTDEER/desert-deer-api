@@ -3,6 +3,10 @@ using desert.deer.Domain.Catalog;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using desert.deer.Data;
 using Microsoft.EntityFrameworkCore;
+//using System.Web.Mvc;
+
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace desert.deer.Api.Controllers {
     [ApiController]
@@ -150,6 +154,7 @@ namespace desert.deer.Api.Controllers {
         */
 
         [HttpDelete("{id:int}")]
+        [Authorize("delete:catalog")]
         public IActionResult DeleteItem(int id){
            var item = _db.Items.Find(id);
             if(item == null){
